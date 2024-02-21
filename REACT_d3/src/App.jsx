@@ -1,18 +1,13 @@
-import { useState, useEffect } from 'react'
-import './App.scss'
-import Alert from './Components/Alert/Alert.jsx'
-import Buscador from './Components/Buscador/Buscador.jsx'
-import Formulario from './Components/Formulario/Formulario.jsx'
-import Listado from './Components/Listado/Listado.jsx'
-import { BaseColaboradores } from './assets/JS/script.js'
+// App.js
+import Listado from './Components/Listado/Listado.jsx'; // Asegúrate de que la ruta al archivo Listado es correcta
 
 const App = () => {
-
   return (
-    <>
+    <div className="App">
+      <h1>Lista de Colaboradores</h1>
       <Listado />
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default App; 
+export default App;

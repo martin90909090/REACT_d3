@@ -1,6 +1,7 @@
-import { BaseColaboradores } from "../../assets/JS/script.js";
+// Listado.jsx
+
+import BaseColaboradores from "../../assets/JS/script.json";
 import {Table} from "react-bootstrap";
-import { useState, useEffect } from "react";
 
 const Listado = () => {
     return (
@@ -16,12 +17,14 @@ const Listado = () => {
             </tr>
           </thead>
           <tbody>
-            {BaseColaboradores.map((colaborador, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
+            {BaseColaboradores.map((colaborador) => (
+              <tr key={colaborador.id}>
+                <td>{colaborador.id}</td>
                 <td>{colaborador.nombre}</td>
-                <td>{colaborador.email}</td>
-                <td>{colaborador.posicion}</td>
+                <td>{colaborador.correo}</td>
+                <td>{colaborador.edad}</td>
+                <td>{colaborador.cargo}</td>
+                <td>{colaborador.telefono}</td>
               </tr>
             ))}
           </tbody>

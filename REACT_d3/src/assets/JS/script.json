@@ -1,5 +1,4 @@
-export const BaseColaboradores = [
-
+[
     { 
         id: "1", 
         nombre: "Juan Soto", 
@@ -25,6 +24,5 @@ export const BaseColaboradores = [
         edad: "28", 
         cargo: "Ingeniero DevOps", 
         telefono: "99226644" 
-    }
-     
+    }   
 ]
