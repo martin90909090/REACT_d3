@@ -1,10 +1,20 @@
 import BaseColaboradores from '../../assets/JS/script';
+import { useState } from 'react';
 import { Table } from 'react-bootstrap';
 
 const Listado = () => {
-  
+    const [colaboradores, setColaboradores] = useState(BaseColaboradores);
+
+    const ordenarPorNombre = () => {
+        const nuevosColaboradores = [...colaboradores];
+        nuevosColaboradores.sort((a, b) => a.nombre.localeCompare(b.nombre));
+        setColaboradores(nuevosColaboradores);
+    };
+    
     return (
-        <Table striped bordered hover>
+        <div>
+            <button onClick={ordenarPorNombre}>Ordenar por nombre</button>
+            <Table striped bordered hover>
             <thead>
                 <tr>
                     <th>ID</th>
@@ -18,20 +28,22 @@ const Listado = () => {
             <tbody>
                 {
                     BaseColaboradores.map((colaborador, index) => {
-                        return (
-                            <tr key={`${colaborador.id}-${index}`}>
-                                <td>{colaborador.id}</td>
-                                <td>{colaborador.nombre}</td>
-                                <td>{colaborador.correo}</td>
-                                <td>{colaborador.edad}</td>
-                                <td>{colaborador.cargo}</td>
-                                <td>{colaborador.telefono}</td>
-                            </tr>
-                        )
-                    })
-                }
-            </tbody>
-        </Table>
+                            return (
+                                <tr key={`${colaborador.id}-${index}`}>
+                                    <td>{colaborador.id}</td>
+                                    <td>{colaborador.nombre}</td>
+                                    <td>{colaborador.correo}</td>
+                                    <td>{colaborador.edad}</td>
+                                    <td>{colaborador.cargo}</td>
+                                    <td>{colaborador.telefono}</td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </Table>
+        </div>
+        
     );
 };
 
