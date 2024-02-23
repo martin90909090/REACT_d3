@@ -1,4 +1,5 @@
-[
+const BaseColaboradores = [
+
     { 
         id: "1", 
         nombre: "Juan Soto", 
@@ -24,5 +25,7 @@
         edad: "28", 
         cargo: "Ingeniero DevOps", 
         telefono: "99226644" 
-    }   
-]
+    }
+];
+
+export default BaseColaboradores;
