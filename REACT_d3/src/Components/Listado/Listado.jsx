@@ -17,9 +17,9 @@ const Listado = () => {
             </thead>
             <tbody>
                 {
-                    BaseColaboradores.map((colaborador) => {
+                    BaseColaboradores.map((colaborador, index) => {
                         return (
-                            <tr key={colaborador.id}>
+                            <tr key={`${colaborador.id}-${index}`}>
                                 <td>{colaborador.id}</td>
                                 <td>{colaborador.nombre}</td>
                                 <td>{colaborador.correo}</td>
