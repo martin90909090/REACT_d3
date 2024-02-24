@@ -1,6 +1,7 @@
 import BaseColaboradores from './assets/JS/script.js';
 import Listado from './Components/Listado/Listado.jsx';
 import { useState } from 'react';
+import './App.scss';
 
 const App = () => {
   const [mostrarListado, setMostrarListado] = useState(true);
