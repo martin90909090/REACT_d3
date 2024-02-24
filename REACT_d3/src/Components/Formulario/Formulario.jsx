@@ -21,6 +21,32 @@ const Formulario = ({ colaboradores, setColaboradores }) => {
       setEdad('');
       setCargo('');
       setTelefono('');
+
+      tableRefresh([nuevoColaborador]);
+    };
+
+    const tableRefresh = () => {
+        const table = document.querySelector('table');
+        table.innerHTML = '';
+        const thead = table.createTHead();
+        const tbody = table.createTBody();
+        const row = thead.insertRow();
+        const headers = ['ID', 'Nombre', 'Correo', 'Edad', 'Cargo', 'Teléfono'];
+        headers.forEach((header) => {
+            const th = document.createElement('th');
+            const text = document.createTextNode(header);
+            th.appendChild(text);
+            row.appendChild(th);
+        });
+        colaboradores.forEach((colaborador) => {
+            const row = tbody.insertRow();
+            const values = Object.values(colaborador);
+            values.forEach((value) => {
+                const cell = row.insertCell();
+                const text = document.createTextNode(value);
+                cell.appendChild(text);
+            });
+        });
     };
   
     return (
