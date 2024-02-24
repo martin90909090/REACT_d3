@@ -6,7 +6,7 @@ import './App.scss';
 
 const App = () => {
   const [mostrarListado, setMostrarListado] = useState(true);
-  const [colaboradores, setColaboradores] = useState([]);
+  const [colaboradores, setColaboradores] = useState([...BaseColaboradores]);
 
   const toggleListado = () => {
       setMostrarListado(!mostrarListado);
@@ -18,7 +18,7 @@ const App = () => {
       <button onClick={toggleListado}>
               {mostrarListado ? 'Ocultar Listado' : 'Mostrar Listado'}
       </button>
-      {mostrarListado && <Listado colaboradores={ BaseColaboradores } />}
+      {mostrarListado && <Listado colaboradores={ colaboradores } />}
       <Formulario colaboradores={colaboradores} setColaboradores={setColaboradores} />
     </div>
   )

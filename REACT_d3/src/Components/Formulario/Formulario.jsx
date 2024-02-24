@@ -40,8 +40,6 @@ const Formulario = ({ colaboradores, setColaboradores }) => {
           <input type="text" className="form-control" value={telefono} onChange={e => setTelefono(e.target.value)} />
         </div>
   
-        {/* Repite para los demás campos... */}
-  
         <button type="submit" className="btn btn-primary">
           Agregar colaborador
         </button>
