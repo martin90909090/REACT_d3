@@ -1,6 +1,5 @@
-import BaseColaboradores from '../../assets/JS/script';
 import { useState } from 'react';
-import { Table } from 'react-bootstrap';
+import BaseColaboradores from '../../assets/JS/script';
 
 const Listado = () => {
     const [colaboradores, setColaboradores] = useState(BaseColaboradores);
@@ -10,24 +9,24 @@ const Listado = () => {
         nuevosColaboradores.sort((a, b) => a.nombre.localeCompare(b.nombre));
         setColaboradores(nuevosColaboradores);
     };
-    
+
     return (
         <div>
-            <button onClick={ordenarPorNombre}>Ordenar por nombre</button>
-            <Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Edad</th>
-                    <th>Cargo</th>
-                    <th>Teléfono</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    BaseColaboradores.map((colaborador, index) => {
+            <button onClick={ordenarPorNombre} className="btn btn-primary">Ordenar por nombre</button>
+            <table className="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Edad</th>
+                        <th>Cargo</th>
+                        <th>Teléfono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        colaboradores.map((colaborador, index) => {
                             return (
                                 <tr key={`${colaborador.id}-${index}`}>
                                     <td>{colaborador.id}</td>
@@ -41,9 +40,8 @@ const Listado = () => {
                         })
                     }
                 </tbody>
-            </Table>
+            </table>
         </div>
-        
     );
 };
 
